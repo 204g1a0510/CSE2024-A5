@@ -1,0 +1,21 @@
+# Abstract
+In the modern digital landscape, online product reviews play a crucial role in shaping consumer opinions and purchasing behaviors. 
+Our Project digs into the realm of multilingual sentiment analysis applied to product reviews, with a special emphasis on generating insightful recommendations. 
+With an increasingly diverse customer base, understanding sentiments across different languages becomes essential for businesses seeking to provide tailored and relevant experiences.
+Using advanced natural language processing techniques and machine learning algorithms, our project aims to extract sentiments expressed in various languages within product reviews. 
+Additionally, we extend our analysis to provide intelligent recommendations based on the sentiment patterns identified.
+By harnessing the power of multilingual sentiment analysis and recommendation systems, businesses can gain profound insights into customer preferences, fine-tune their products and services, and deliver a more personalized user experience.
+#Problem statement
+In the modern e-commerce landscape, analyzing sentiments across multiple languages in product reviews and leveraging the insights to offer personalized recommendations remains a critical challenge. 
+We need a smart solution that can fill this gap and provide businesses with useful insights to better engage customers and in strategic decision making.
+#objectives
+Research Objective 1: Create a multilingual sentiment analysis model capable of analyzing sentiments expressed in product reviews across different languages.
+Research Objective   2: Design and implement a recommendation system that utilizes the sentiment analysis results to provide personalized product recommendations to users.
+
+#Literature Survey
+1.The proposed model combines a sentiment dictionary with a convolutional neural network (CNN) and a long short-term memory (LSTM) network. The sentiment dictionary is used to extract sentiment scores for individual words, the CNN is used to capture local features of the text, and the LSTM is used to capture long-term dependencies in the text. The model is trained on a dataset of tweets in English and Hindi.
+2.The proposed model is a good starting point for developing a multilingual sentiment analysis system for the first objective. The model is simple to implement and it can achieve good performance on a variety of tasks. However, the model can be improved by using a better sentiment dictionary and a more powerful machine learning system.
+3.The proposed model is a personalized recommendation system that uses sentiment analysis of product reviews. The system first identifies the purchase criteria of each user. Then, it analyzes the sentiment of product reviews for products that match the user's purchase criteria. Finally, it recommends products to the user that have positive sentiment reviews.
+4.The proposed model is a good starting point for developing a recommendation system. But, The algorithm used in the paper is a simple algorithm that is not very accurate. And their model uses purchase criteria to make recommendations but we are only going with sentiments of the reviews.
+
+
