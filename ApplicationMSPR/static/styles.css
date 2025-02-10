@@ -1,0 +1,92 @@
+/* Customize the navbar */
+
+
+.navbar {
+    background-color: #f8f9fa;
+}
+
+/* Style the navigation links */
+.navbar-nav .nav-link {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Add some padding to the navbar items */
+.navbar-nav .nav-item {
+    margin-right: 10px;
+}
+
+/* Style the active link */
+.navbar-nav .nav-item.active .nav-link {
+    color: #007bff;
+}
+
+/* Center the brand logo */
+.navbar-brand {
+    margin: 0 auto;
+}
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* styles.css */
+
+/* Dark background color */
+
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card {
+    background-color: #444; /* Darker background color for cards */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card img {
+    width: 100%; /* Ensure images fill the entire width of the card */
+    height: 200px; /* Fixed height for all images */
+    object-fit: cover; /* Ensure images maintain aspect ratio and cover entire space */
+    border-radius: 8px;
+}
+
+.card-img-top {
+            width: 100%;
+            height: 200px; /* Set a fixed height for all images */
+            object-fit: cover; /* Ensure images maintain aspect ratio and cover entire space */
+        }
+
+
+
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a2e; /* Dark navy blue background color */
+    color: #fff; /* Text color */
+}
