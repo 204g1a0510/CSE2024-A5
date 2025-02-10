@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}E-commerce Site{% endblock %}</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Add your custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+   <style>
+        /* Change body background color to white */
+        body {
+            background-color: white;
+            color: black; /* Set text color to black for better contrast */
+        }
+
+        /* Change navbar background color to gray */
+        .navbar {
+            background-color: #6f7075 !important; /* Adding !important to override Bootstrap */
+        }
+
+        /* Change navbar text color to white */
+        .navbar-nav .nav-link {
+            color: white !important; /* Adding !important to override Bootstrap */
+        }
+
+        /* Change footer background color to gray */
+        footer {
+            background-color: #6f7075;
+        }
+
+        /* Change footer text color to white */
+        footer p {
+            color: white;
+        }
+
+        /* Change card background color to gray */
+        .card {
+            background-color: #6f7075;
+        }
+
+        /* Change card text color to white */
+        .card-title,
+        .card-text {
+            color: white;
+        }
+
+        /* Add custom cursor style */
+        body {
+            cursor: url('hand.cur'), auto;
+        }
+
+        /* Add glow effect for selected elements */
+        .glow {
+            box-shadow: 0 0 10px #007bff; /* Change shadow color as needed */
+            transition: box-shadow 0.3s ease;
+        }
+
+        .glow:hover {
+            box-shadow: 0 0 20px #007bff; /* Adjust glow intensity as needed */
+        }
+
+        /* Add tracking line for cursor movement */
+        #cursor-line {
+            position: fixed;
+            background-color: white; /* Change line color as needed */
+            height: 2px; /* Change line thickness as needed */
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none; /* Prevent the line from interfering with cursor interactions */
+            display: none; /* Hide the line by default */
+            z-index: 9999; /* Ensure the line appears above other elements */
+        }
+    </style>
+
+</head>
+<body>
+     <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"> <!-- Add 'fixed-top' class here -->
+            <a class="navbar-brand" href="/">E-commerce Site</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/write_review">Write Review</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/my_reviews">My Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/my_recommendations">My Recommendations</a>
+                    </li>
+                    {% if 'user_id' in session %}
+                        <li class="nav-item"><a href="/logout">Logout</a></li>
+                    {% else %}
+                        <li class="nav-item"><a href="/login">Login</a></li>
+                        <li class="nav-item"><a href="/signup">Signup</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-5">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="mt-5">
+        <div class="container">
+            <p>&copy; 2024 E-commerce Site. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Add Bootstrap JS and your custom JS here -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var line = document.getElementById('cursor-line');
+            var prevX = 0;
+            var prevY = 0;
+            var mouseX = 0;
+            var mouseY = 0;
+
+            setInterval(function() {
+                prevX = mouseX;
+                prevY = mouseY;
+            }, 100);
+
+            document.addEventListener('mousemove', function(e) {
+                line.style.display = 'block';
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                var angle = Math.atan2(mouseY - prevY, mouseX - prevX);
+                var length = Math.sqrt(Math.pow(mouseX - prevX, 2) + Math.pow(mouseY - prevY, 2));
+                line.style.left = prevX + 'px';
+                line.style.top = prevY + 'px';
+                line.style.transform = 'rotate(' + angle + 'rad)';
+                line.style.width = length + 'px';
+            });
+        });
+    </script>
+<!--    <div id="cursor-line"></div>-->
+
+</body>
+</html>

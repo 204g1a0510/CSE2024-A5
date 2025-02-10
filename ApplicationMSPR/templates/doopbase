@@ -1,0 +1,71 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>{% block title %}E-commerce Site{% endblock %}</title>-->
+<!--    &lt;!&ndash; Add Bootstrap CSS &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+<!--    &lt;!&ndash; Add your custom CSS &ndash;&gt;-->
+<!--&lt;!&ndash;    <link rel="stylesheet" href="styles.css">&ndash;&gt;-->
+<!--<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">-->
+
+<!--</head>-->
+<!--<body>-->
+<!--    <header>-->
+<!--        <nav class="navbar navbar-expand-lg navbar-light bg-light">-->
+<!--            <a class="navbar-brand" href="/">E-commerce Site</a>-->
+<!--            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--                <span class="navbar-toggler-icon"></span>-->
+<!--            </button>-->
+<!--            <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--                <ul class="navbar-nav mr-auto">-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" href="/">Home</a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" href="/write_review">Write Review</a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" href="/my_reviews">My Reviews</a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" href="/my_recommendations">My Recommendations</a>-->
+<!--                    </li>-->
+<!--&lt;!&ndash;                    {% if not user_logged_in %}&ndash;&gt;-->
+<!--&lt;!&ndash;                    <li class="nav-item"><a href="/login">Login</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <li class="nav-item"><a href="/signup">Signup</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                {% else %}&ndash;&gt;-->
+<!--&lt;!&ndash;                    <li class="nav-item"><a href="/logout">Logout</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                {% endif %}&ndash;&gt;-->
+<!--            {% if 'user_id' in session %}-->
+<!--                <li class="nav-item"><a href="/logout">Logout</a></li>-->
+<!--                {% else %}-->
+<!--                <li class="nav-item"><a href="/login">Login</a></li>-->
+<!--                <li class="nav-item"><a href="/signup">Signup</a></li>-->
+<!--                                    {% endif %}-->
+
+<!--                </ul>-->
+<!--                &lt;!&ndash; Add login/signup/logout buttons or links here &ndash;&gt;-->
+<!--            </div>-->
+<!--        </nav>-->
+<!--    </header>-->
+
+<!--    <main class="container mt-5">-->
+<!--        {% block content %}-->
+<!--        {% endblock %}-->
+<!--    </main>-->
+
+<!--    <footer class="mt-5">-->
+<!--        <div class="container">-->
+<!--            <p>&copy; 2024 E-commerce Site. All rights reserved.</p>-->
+<!--        </div>-->
+<!--    </footer>-->
+
+<!--    &lt;!&ndash; Add Bootstrap JS and your custom JS here &ndash;&gt;-->
+<!--    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>-->
+<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
+<!--    <script src="script.js"></script>-->
+<!--</body>-->
+<!--</html>-->

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Website</title>
+    <style>
+        /* Apply hand cursor to clickable elements */
+        .clickable {
+            cursor: pointer;
+        }
+
+        /* Add a glow effect on click */
+        .glow {
+            box-shadow: 0 0 10px rgba(0, 0, 255, 0.7);
+        }
+
+        /* Create a line that follows cursor movement */
+        #line {
+            position: absolute;
+            background-color: #f00;
+            height: 2px;
+            width: 0;
+            transition: width 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="clickable glow">Click me!</h1>
+    <div id="line"></div>
+
+    <script>
+        const line = document.getElementById('line');
+
+        // Track cursor movement
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
+            line.style.width = `${x}px`;
+            line.style.top = `${y}px`;
+        });
+
+        // Add glow effect on click
+        const clickableElement = document.querySelector('.clickable');
+        clickableElement.addEventListener('click', () => {
+            clickableElement.classList.add('glow');
+        });
+    </script>
+</body>
+</html>

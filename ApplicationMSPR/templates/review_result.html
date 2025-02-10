@@ -1,0 +1,62 @@
+<!--&lt;!&ndash; templates/result.html &ndash;&gt;-->
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    &lt;!&ndash; ... (existing head content) ... &ndash;&gt;-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="container">-->
+<!--        <h1 class="mt-4">Analysis Result</h1>-->
+<!--        <p class="lead">Sentiment: {{ sentiment }}</p>-->
+<!--        <p class="lead">Recommended Product:</p>-->
+<!--        {% for product in recommendations %}-->
+<!--            <div class="product-option">-->
+<!--                <img src="{{ url_for('static', filename=product.image) }}" alt="{{ product.name }}" class="product-img" width="150">-->
+<!--                <br>-->
+<!--                <p>{{ product.name }}</p>-->
+<!--                <p>{{ product.description }}</p>-->
+<!--            </div>-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+<!--</body>-->
+<!--</html>-->
+
+
+{% extends 'base.html' %}
+
+{% block title %}result{% endblock %}
+
+{% block content %}
+<!-- templates/result.html -->
+
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Analysis Result</h1>
+        <p class="lead">Sentiment: {{ sentiment }}</p>
+        <p class="lead">Selected Product ID: {{ product_id }}</p>
+
+        <div class="row">
+            {% for product in recommendations %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <!-- Use url_for to generate the correct image URL -->
+                        <img src="{{ url_for('static', filename=product['image']) }}" class="card-img-top" alt="{{ product['name'] }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product['name'] }}</h5>
+                            <p class="card-text">{{ product['description'] }}</p>
+                            <p class="card-text">Product ID: {{ product['id'] }}</p>
+                            <!-- You can include more product details as needed -->
+                        </div>
+                    </div>
+                </div>
+
+                {% if loop.index % 3 == 0 %}
+                    </div><div class="row">
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+<!--<div id="cursor-line"></div>-->
+
+</body>
+{% endblock %}

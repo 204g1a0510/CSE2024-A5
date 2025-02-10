@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<h2>My Recommendations</h2>
+
+{% if recommendations %}
+<!--{{ recommendations}}-->
+<div class="row">
+    {% for recommendation in recommendations %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="{{ url_for('static', filename=recommendation['image']) }}" class="card-img-top" alt="{{ recommendation['name'] }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ recommendation['name'] }}</h5>
+                <p class="card-text">{{ recommendation['description'] }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% else %}
+<p>No recommendations found.</p>
+{% endif %}
+<!--<div id="cursor-line"></div>-->
+
+{% endblock %}
+
